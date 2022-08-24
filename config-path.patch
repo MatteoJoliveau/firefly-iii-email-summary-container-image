@@ -1,0 +1,21 @@
+--- firefly-iii-email-summary/monthly-report.py	2022-08-24 12:55:42.381025140 +0200
++++ monthly-report.py	2022-08-24 13:12:22.964900775 +0200
+@@ -9,15 +9,17 @@
+ import bs4
+ import ssl
+ import smtplib
++import os
+ 
+ from email.message import EmailMessage
+ from email.headerregistry import Address
+ from email.utils import make_msgid
+ 
+ def main():
++	config_path = os.getenv("CONFIG_FILE_PATH", 'config.yaml')
+ 	#
+ 	# Load configuration
+-	with open('config.yaml', 'r') as configFile:
++	with open(config_path, 'r') as configFile:
+ 		try:
+ 			config = yaml.safe_load(configFile)
+ 		except:

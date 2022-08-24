@@ -1,0 +1,3 @@
+[submodule "firefly-iii-email-summary"]
+	path = firefly-iii-email-summary
+	url = https://github.com/davidschlachter/firefly-iii-email-summary.git
